@@ -15,11 +15,18 @@ margin_right = 1280.0
 margin_bottom = 66.0
 
 [node name="DayLbl" type="Label" parent="TopUIPanel"]
-margin_left = 1088.0
+margin_left = 1176.0
 margin_top = 8.0
-margin_right = 1264.0
+margin_right = 1272.0
 margin_bottom = 22.0
 text = "Day: 0"
+
+[node name="YearLbl" type="Label" parent="TopUIPanel"]
+margin_left = 1080.0
+margin_top = 8.0
+margin_right = 1160.0
+margin_bottom = 22.0
+text = "Year: 0"
 
 [node name="PopulationLbl" type="Label" parent="TopUIPanel"]
 margin_left = 456.0
@@ -50,9 +57,9 @@ custom_colors/font_color = Color( 0, 1, 0.27451, 1 )
 text = "Healthy"
 
 [node name="HappynessLbl" type="Label" parent="TopUIPanel"]
-margin_left = 656.0
+margin_left = 640.0
 margin_top = 32.0
-margin_right = 704.0
+margin_right = 711.0
 margin_bottom = 46.0
 text = "Happiness:"
 
@@ -125,8 +132,8 @@ text = ":0"
 [node name="ForageBtn" type="Button" parent="."]
 margin_left = 8.0
 margin_top = 88.0
-margin_right = 72.0
-margin_bottom = 108.0
+margin_right = 96.0
+margin_bottom = 136.0
 text = "Forage"
 
 [node name="BuildingPanel" type="Panel" parent="."]
@@ -141,23 +148,25 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 94.0
 margin_bottom = 22.0
+hint_tooltip = "Increases population growth."
+mouse_filter = 1
 text = "Small house: "
 
-[node name="Button" type="Button" parent="BuildingPanel/SmallHouseLbl"]
-margin_left = 160.0
-margin_right = 180.0
+[node name="BuildSmallHouseBtn" type="Button" parent="BuildingPanel/SmallHouseLbl"]
+margin_left = 168.0
+margin_right = 188.0
 margin_bottom = 20.0
 text = "+"
 
 [node name="Button2" type="Button" parent="BuildingPanel/SmallHouseLbl"]
-margin_left = 88.0
-margin_right = 108.0
+margin_left = 96.0
+margin_right = 116.0
 margin_bottom = 20.0
 text = "-"
 
-[node name="Label" type="Label" parent="BuildingPanel/SmallHouseLbl"]
-margin_left = 112.0
-margin_right = 152.0
+[node name="SmallHouseTxt" type="Label" parent="BuildingPanel/SmallHouseLbl"]
+margin_left = 120.0
+margin_right = 160.0
 margin_bottom = 14.0
 text = "0"
 align = 1
@@ -169,21 +178,21 @@ margin_right = 94.0
 margin_bottom = 54.0
 text = "Large house: "
 
-[node name="Button" type="Button" parent="BuildingPanel/LargeHouseLbl2"]
-margin_left = 160.0
-margin_right = 180.0
+[node name="BuildLHouseBtn" type="Button" parent="BuildingPanel/LargeHouseLbl2"]
+margin_left = 168.0
+margin_right = 188.0
 margin_bottom = 20.0
 text = "+"
 
 [node name="Button2" type="Button" parent="BuildingPanel/LargeHouseLbl2"]
-margin_left = 88.0
-margin_right = 108.0
+margin_left = 96.0
+margin_right = 116.0
 margin_bottom = 20.0
 text = "-"
 
-[node name="Label" type="Label" parent="BuildingPanel/LargeHouseLbl2"]
-margin_left = 112.0
-margin_right = 152.0
+[node name="LHouseTxtLbl" type="Label" parent="BuildingPanel/LargeHouseLbl2"]
+margin_left = 120.0
+margin_right = 160.0
 margin_bottom = 14.0
 text = "0"
 align = 1
@@ -195,21 +204,21 @@ margin_right = 94.0
 margin_bottom = 86.0
 text = "Family Farm: "
 
-[node name="Button" type="Button" parent="BuildingPanel/FamFarmLbl"]
-margin_left = 160.0
-margin_right = 180.0
+[node name="BuildFamFarmBtn" type="Button" parent="BuildingPanel/FamFarmLbl"]
+margin_left = 168.0
+margin_right = 188.0
 margin_bottom = 20.0
 text = "+"
 
 [node name="Button2" type="Button" parent="BuildingPanel/FamFarmLbl"]
-margin_left = 88.0
-margin_right = 108.0
+margin_left = 96.0
+margin_right = 116.0
 margin_bottom = 20.0
 text = "-"
 
-[node name="Label" type="Label" parent="BuildingPanel/FamFarmLbl"]
-margin_left = 112.0
-margin_right = 152.0
+[node name="FamFarmTxtLbl" type="Label" parent="BuildingPanel/FamFarmLbl"]
+margin_left = 120.0
+margin_right = 160.0
 margin_bottom = 14.0
 text = "0"
 align = 1
@@ -219,9 +228,11 @@ margin_left = 8.0
 margin_top = 104.0
 margin_right = 94.0
 margin_bottom = 118.0
+hint_tooltip = "Basic well for water collection."
+mouse_filter = 1
 text = "Primitve Well: "
 
-[node name="Button" type="Button" parent="BuildingPanel/PrimWellLbl"]
+[node name="BuildPWellBtn" type="Button" parent="BuildingPanel/PrimWellLbl"]
 margin_left = 168.0
 margin_right = 188.0
 margin_bottom = 20.0
@@ -233,7 +244,7 @@ margin_right = 116.0
 margin_bottom = 20.0
 text = "-"
 
-[node name="Label" type="Label" parent="BuildingPanel/PrimWellLbl"]
+[node name="PWellTextLbl" type="Label" parent="BuildingPanel/PrimWellLbl"]
 margin_left = 120.0
 margin_right = 160.0
 margin_bottom = 14.0
@@ -245,6 +256,8 @@ margin_left = 8.0
 margin_top = 136.0
 margin_right = 103.0
 margin_bottom = 150.0
+hint_tooltip = "A camp to increase Timber collection."
+mouse_filter = 1
 text = "Timber Camp:"
 
 [node name="Button" type="Button" parent="BuildingPanel/TimberCampLbl"]
@@ -266,11 +279,39 @@ margin_bottom = 14.0
 text = "0"
 align = 1
 
+[node name="StoneQuarryLbl" type="Label" parent="BuildingPanel"]
+margin_left = 8.0
+margin_top = 168.0
+margin_right = 103.0
+margin_bottom = 182.0
+hint_tooltip = "A camp to increase Timber collection."
+mouse_filter = 1
+text = "Stone Quarry:"
+
+[node name="BuildQuarryBtn" type="Button" parent="BuildingPanel/StoneQuarryLbl"]
+margin_left = 168.0
+margin_right = 188.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Button2" type="Button" parent="BuildingPanel/StoneQuarryLbl"]
+margin_left = 96.0
+margin_right = 116.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="SQuarryTextLbl" type="Label" parent="BuildingPanel/StoneQuarryLbl"]
+margin_left = 120.0
+margin_right = 160.0
+margin_bottom = 14.0
+text = "0"
+align = 1
+
 [node name="EventPanel" type="Panel" parent="."]
 self_modulate = Color( 0.0784314, 0, 0.984314, 0.313726 )
-margin_left = 904.0
-margin_top = 72.0
-margin_right = 1272.0
+margin_left = 896.0
+margin_top = 352.0
+margin_right = 1264.0
 margin_bottom = 600.0
 
 [node name="Label" type="Label" parent="EventPanel"]
@@ -308,5 +349,17 @@ margin_right = 278.0
 margin_bottom = 142.0
 text = "Day 1: Or other events in the city."
 
+[node name="Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 208.0
+margin_right = 92.0
+margin_bottom = 228.0
+text = "Research"
+
 [connection signal="pressed" from="ForageBtn" to="." method="_on_ForageBtn_pressed"]
+[connection signal="pressed" from="BuildingPanel/SmallHouseLbl/BuildSmallHouseBtn" to="." method="_on_BuildSmallHouseBtn_pressed"]
+[connection signal="pressed" from="BuildingPanel/LargeHouseLbl2/BuildLHouseBtn" to="." method="_on_BuildLHouseBtn_pressed"]
+[connection signal="pressed" from="BuildingPanel/FamFarmLbl/BuildFamFarmBtn" to="." method="_on_BuildFamFarmBtn_pressed"]
+[connection signal="pressed" from="BuildingPanel/PrimWellLbl/BuildPWellBtn" to="." method="_on_BuildPWellBtn_pressed"]
 [connection signal="pressed" from="BuildingPanel/TimberCampLbl/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="BuildingPanel/StoneQuarryLbl/BuildQuarryBtn" to="." method="_on_BuildQuarryBtn_pressed"]
