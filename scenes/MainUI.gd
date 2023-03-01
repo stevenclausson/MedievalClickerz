@@ -1,18 +1,18 @@
 extends Control
 
-onready var population = Global.population
-onready var food = Global.food
-onready var water = Global.water
-onready var timber = Global.timber
-onready var stone = Global.stone
-onready var day = Global.day
-onready var year = Global.year
+@onready var population = Global.population
+@onready var food = Global.food
+@onready var water = Global.water
+@onready var timber = Global.timber
+@onready var stone = Global.stone
+@onready var day = Global.day
+@onready var year = Global.year
 
 func _ready():
 	var timer = Timer.new()
 	add_child(timer)
 	timer.set_wait_time(3)
-	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.connect("timeout",Callable(self,"_on_Timer_timeout"))
 	timer.start()
 
 func UpdateUIData():
@@ -33,10 +33,11 @@ func _on_Timer_timeout():
 	UpdateUIData()
 
 func EndDay():
-	day += 10
-	if (day > 365):
-		year += 1
-		day = 0
+	if (Global.day <= 365):
+		Global.day +=1
+	elif(Global.day > 365):
+		Global.day = 0
+		Global.year += 1
 	$BuildingPanel/TimberCampLbl/Button.disabled = false
 	$BuildingPanel/PrimWellLbl/BuildPWellBtn.disabled = false
 	$BuildingPanel/SmallHouseLbl/BuildSmallHouseBtn.disabled = false
@@ -82,3 +83,11 @@ func _on_BuildQuarryBtn_pressed():
 	Global.BuildStoneQuarry()
 	$BuildingPanel/StoneQuarryLbl/BuildQuarryBtn.disabled = true
 	$BuildingPanel/StoneQuarryLbl/SQuarryTextLbl.text = str(Global.stoneQuarry)
+
+
+func _on_SaveBtn_pressed():
+	Global.save_data(Global.player_file_path)
+
+
+func _on_LoadBtn_pressed():
+	Global.load_data(Global.player_file_path)

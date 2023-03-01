@@ -1,5 +1,8 @@
 extends Node
 
+var player_file_path = "user://player_data.json"
+
+
 var rng = RandomNumberGenerator.new()
 
 
@@ -32,8 +35,57 @@ var stoneQuarry = 0
 var primitiveWell = 0
 
 
+#------------SAVING/LOADING GAME
+var default_data = {
+	"day" : 0,
+	"year" : 0,
+	"population" : 10,
+	"unemployed" : 0,
+	"populationGrowthRate" : 0.008,
+	"food" : 100,
+	"foodCollectionRate" : 0,
+	"isStarving" : false,
+	"starvingDays" : 0,
+	"water" : 300,
+	"waterCollectionRate" : 0,
+	"timber" : 10,
+	"timberGrowthRate" : 0,
+	"stone" : 10,
+	"stoneCollectionRate" : 0,
+	"hide" : 20,
+	"smallHouse" : 0,
+	"largeHouse" : 0,
+	"familyFarm" : 0,
+	"timberCamp" : 0,
+	"stoneQuarry" : 0,
+	"primitiveWell" : 0
+	
+}
+
+var current_data = {}
+
+func reset_data():
+	current_data.clear()
+	current_data = default_data.diplicate(true)
 
 
+#func save_data(path : String):
+#	var file
+#	file = File.new()
+#	file.open(path, File.WRITE)
+#	file.store_line(JSON.new().stringify(current_data))
+#	file.close()
+#	print("File saved.")
+#
+#func load_data(path : String):
+#	var file = File.new()
+#	file.open(path, File.READ)
+#	var test_json_conv = JSON.new()
+#	test_json_conv.parse(file.get_as_text())
+#	var data_json = test_json_conv.get_data()
+#	file.close()
+#	current_data = data_json.result
+#	print("File loaded.")
 
 
 #----FUNCTIONS HERE
