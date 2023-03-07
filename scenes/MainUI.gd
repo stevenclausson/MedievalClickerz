@@ -16,13 +16,13 @@ func _ready():
 	timer.start()
 
 func UpdateUIData():
-	$TopUIPanel/PopulationLbl.text = "Population: " + str(Global.population)
+	$TopUIPanel/PopulationLbl.text = "Population: " + str(floor(Global.population))
 	$TopUIPanel/FoodLbl.text = "Food: " + str(Global.food)
-	$BottomUIPanel/TimberSprite/TimberLbl.text =": " + str(Global.timber)
+	$BottomUIPanel/TimberSprite/TimberLbl.text =": " + str(floor(Global.timber))
 	$TopUIPanel/DayLbl.text = "Day: " + str(Global.day)
-	$BottomUIPanel/StoneSprite/StoneLbl.text = ": " +str(Global.stone)
-	$TopUIPanel/UnemployedLbl.text = "Unemployed: " +str(Global.unemployed)
-	$TopUIPanel/WaterLbl.text = "Water: " + str(Global.water)
+	$BottomUIPanel/StoneSprite/StoneLbl.text = ": " +str(floor(Global.stone))
+	$TopUIPanel/UnemployedLbl.text = "Unemployed: " +str(floor(Global.unemployed))
+	$TopUIPanel/WaterLbl.text = "Water: " + str(floor(Global.water))
 	$TopUIPanel/YearLbl.text = "Year: " + str(Global.year)
 func _on_Timer_timeout():
 	EndDay()
